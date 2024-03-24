@@ -1,0 +1,19 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.slider-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#slider {
+    /* Properti CSS tambahan untuk styling gambar */
+    max-width: 50%;
+    max-height: 50%;
+    /* Jika ingin gambar tetap proporsional */
+    /* object-fit: contain; */
+}

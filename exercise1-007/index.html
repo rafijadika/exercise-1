@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ec5a10 30%, #f9f9f9 70%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #content {
+      text-align: center;
+    }
+
+    #image {
+      width: 700px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      border: 10px solid #000;
+      padding: 10px;
+    }
+
+    /* Frame untuk deskripsi */
+    #description-frame {
+      display: none; /* Mulai dengan menyembunyikan deskripsi */
+      border: 3px solid #000;
+      padding: 20px;
+      background-color: #fff; /* Warna latar belakang frame */
+      border-radius: 10px;
+      margin-bottom: 20px;
+      width: 500px; /* Lebar frame */
+      height: auto; /* Ketinggian frame menyesuaikan kontennya */
+      margin-left: auto; /* Mengatur ke tengah */
+      margin-right: auto; /* Mengatur ke tengah */
+    }
+
+    p {
+      margin: 0; /* Menghilangkan margin bawaan pada paragraf */
+    }
+
+    /* Tombol yang menarik */
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      background-color: #ff6200; /* Warna latar biru */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #000000; /* Warna latar biru yang lebih gelap saat hover */
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>LETS PLAY GTA ONLIE</h1>
+    <img id="image" src="image 1.jpg" alt="Gambar">
+    <!-- Frame untuk deskripsi -->
+    <div id="description-frame">
+      <p id="description">Experience GTA Online, a dynamic and ever-evolving online universe for up to 30 players, including all existing gameplay upgrades and content released since launch ready to enjoy solo or with friends. What are you waiting for? immediately play GTA Online right now. available for desktop and console</p>
+    </div>
+    <!-- Tombol untuk menampilkan deskripsi -->
+    <button onclick="toggleDescription()">Selengkapnya</button>
+    <button onclick="show()">Play Now</button>
+  </div>
+
+  <script>
+    const images = ['image 1.jpg', 'image 2.jpg', 'image 3.jpg']; // List of image filenames
+    let currentIndex = 0;
+
+    function slide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById('image').src = images[currentIndex];
+    }
+
+    setInterval(slide, 5000); // Change image every 5 seconds
+
+    function show() {
+      var result = confirm(". Apakah Anda ingin melanjutkan?");
+      if (result == true) {
+        var linkUmum = "https://www.rockstargames.com/newswire/article/ak759k91592728/gta-online-the-contract-out-now";
+        window.open(linkUmum, "_blank");
+      } else {
+        // Kode untuk jika pengguna menekan Cancel
+      }
+    }
+
+    function toggleDescription() {
+      var descriptionFrame = document.getElementById('description-frame');
+      descriptionFrame.style.display = (descriptionFrame.style.display === 'none') ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
